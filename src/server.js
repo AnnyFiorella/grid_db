@@ -11,11 +11,11 @@ const { DB } = require('./config/DB');
 
 
 //Ruta del usuario
-const usuarioRoutes = require('./routes/usuario');
+const materialRoutes = require('./routes/material');
 
 const mongoose = require('mongoose');
 mongoose.Promise = global.Promise;
-mongoose.connect (DB,{useMongoClient : true})
+mongoose.connect (DB)
     .then(() => console.log('db connected'))
     .catch(err => console.log(err));
 
@@ -27,7 +27,7 @@ app.use(cors());
 app.use(bodyParser.json());
 
 // routes
-app.use('/user', usuarioRoutes);
+app.use('/material', materialRoutes);
 
 
 // ruta para los archivos staticos

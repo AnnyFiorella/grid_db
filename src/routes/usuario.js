@@ -2,28 +2,28 @@ const express = require('express');
 const router = express.Router();
 
 // hace llamado al esquema usuario
-const User = require('../models/Usuario');
+const Material = require('../models/Material');
 
 // ruta que devuelve la información del usuario por según el Id de usuario que quieren obtener
 router.get('/:id', (req, res, next) => {
-    User.findById(req.params.id, function(err, user){
+    Material.findById(req.params.id, function(err, material){
         if(err){
             res.status(500).json({message:'Se ha producido un error al obtener el usuario'})
         }
         else{
-            res.json(user);
+            res.json(material);
         }        
     })
 });
 
 // ruta que obtiene los datos almacenados en el esquema Usuario
 router.get('/', (req, res) => {
-    User.find(function (err, users) {
+    Material.find(function (err, materials) {
         if(err) {            
             res.status(500).send({message: 'Error al listar los usuarios'})
         }
         else {
-            res.json(users);
+            res.json(materials);
         }
     })
 });
@@ -31,9 +31,9 @@ router.get('/', (req, res) => {
 // ruta que agrega datos al esquema usuario por metodo POST /usuario - POST
 
 router.post('/',(req, res) => {
-    const user = new User(req.body);
-    user.save()
-    .then(user => {
+    const material = new Material(req.body);
+    material.save()
+    .then(material => {
         res.status(201).json({message: ' El usuario ha sido agregado satisfactoriamente'})
     })
     .catch(err => {
@@ -43,23 +43,23 @@ router.post('/',(req, res) => {
 
 // actualiza datos al esquema usuario por el método PUT que recibe como parametro el id del usuario
 router.put('/:id', (req, res, next) => {
-    User.findById(req.params.id, function (err, user){
-        if(!user) {
+    Material.findById(req.params.id, function (err, material){
+        if(!material) {
             return res.status(404).send('No se ha encontrado el usuario');
         } else {
-            user.title = req.body.title;
-            user.src = req.body.src;
-            user.cod_user = req.body.cod_user;
-            user.cod_program = req.body.cod_program;
-            user.duration = req.body.duration;
-            user.user_type = req.body.user_type;
-            user.classification = req.body.classification;
-            user.cost_center = req.body.cost_center;
-            user.genre = req.body.genre;
-            user.status = req.body.status;
+            material.title = req.body.title;
+            material.src = req.body.src;
+            material.cod_user = req.body.cod_user;
+            material.cod_program = req.body.cod_program;
+            material.duration = req.body.duration;
+            material.user_type = req.body.user_type;
+            material.classification = req.body.classification;
+            material.cost_center = req.body.cost_center;
+            material.genre = req.body.genre;
+            material.status = req.body.status;
 
-            user.save()
-            .then(user => {
+            material.save()
+            .then(material => {
                 res.status(200).json('Usuario Actualizado completamente');
             })
             .catch(err => {
@@ -71,7 +71,7 @@ router.put('/:id', (req, res, next) => {
 
 // elimina el dato usuario de la base de datos por el método PUT que recibe como parametro el id del usuario
 router.delete('/:id', (req, res, next) => {
-    User.findByIdAndRemove(req.params.id, function (err, user) {
+    Material.findByIdAndRemove(req.params.id, function (err, material) {
         if(err) {            
             res.status(400).send('Se ha producido un error al eliminar el usuario');
         }
