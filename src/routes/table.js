@@ -1,5 +1,5 @@
 const express = require('express');
-const router = express.Router();
+const router2 = express.Router();
 
 // hace llamado al esquema usuario
 const Table = require('../models/Table');
@@ -72,3 +72,5 @@ router.delete('/:id', (req, res, next) => {
         }
     });
 });
+
+module.exports = router2;
