@@ -5,7 +5,7 @@ const Schema = mongoose.Schema;
 /**
  * Se crea el esquema del modelo Usuario con sus propiedades 
  */
-const User = new Schema({
+const Material = new Schema({
     id: { type: Number},
     title: { type: String},
     src: { type: String},
@@ -18,8 +18,8 @@ const User = new Schema({
     genre: { type: String},
     status: { type: Boolean}
 },{
-    collection: 'users'
+    collection: 'materials'
 });
 
 // Exporta el modelo del esquema Usuario para ser usado en la aplicación
-module.exports = mongoose.model('User', User);
+module.exports = mongoose.model('Material', Material);
