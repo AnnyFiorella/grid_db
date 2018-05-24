@@ -49,14 +49,22 @@ router.put('/:id', (req, res, next) => {
         } else {
             material.title = req.body.title;
             material.src = req.body.src;
-            material.cod_user = req.body.cod_user;
+            material.cod_material = req.body.cod_material;
             material.cod_program = req.body.cod_program;
             material.duration = req.body.duration;
-            material.user_type = req.body.user_type;
+            material.material_type = req.body.user_type;
             material.classification = req.body.classification;
+            material.num_classification = req.body.num_classification;
+            material.broadcastPrice = req.body.broadcastPrice;
+            material.broadcastCredit = req.body.broadcastCredit;
+            material.stars = req.body.stars;
+            material.startValidity = req.body.startValidity;
+            material.endValidity = req.body.endValidity;
             material.cost_center = req.body.cost_center;
+            material.num_center = req.body.num_center;
             material.genre = req.body.genre;
             material.status = req.body.status;
+            material.canned = req.body.canned;
 
             material.save()
             .then(material => {

@@ -14,9 +14,17 @@ const Material = new Schema({
     duration: { type: String},
     material_type: { type: String},
     classification: { type: String},
+    num_classification: { type: Number},
+    broadcastPrice: { type: Number},
+    broadcastCredit: { type: Number},
+    stars: { type: String},
+    startValidity: { type: String},
+    endValidity: { type: String},
     cost_center: { type: String},
+    num_center: { type: Number},
     genre: { type: String},
-    status: { type: Boolean}
+    status: { type: Boolean},
+    canned: { type: Boolean}
 },{
     collection: 'materials'
 });
