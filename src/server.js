@@ -12,7 +12,6 @@ const { DB } = require('./config/DB');
 
 //Ruta del usuario
 const materialRoutes = require('./routes/material');
-const tableRoutes = require('./routes/table');
 
 const mongoose = require('mongoose');
 mongoose.Promise = global.Promise;
@@ -29,7 +28,6 @@ app.use(bodyParser.json());
 
 // routes
 app.use('/material', materialRoutes);
-app.use('/table', tableRoutes);
 
 
 // ruta para los archivos staticos

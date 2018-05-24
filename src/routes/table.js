@@ -1,4 +1,4 @@
-const express = require('express');
+/*const express = require('express');
 const router2 = express.Router();
 
 // hace llamado al esquema usuario
@@ -73,4 +73,4 @@ router.delete('/:id', (req, res, next) => {
     });
 });
 
-module.exports = router2;
+module.exports = router2;*/
