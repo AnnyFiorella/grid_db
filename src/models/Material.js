@@ -14,7 +14,7 @@ const Material = new Schema({
     duration: { type: String},
     material_type: { type: String},
     classification: { type: String},
-    num_classification: { type: Number},
+    num_classification: { type: String},
     broadcastPrice: { type: Number},
     broadcastCredit: { type: Number},
     stars: { type: String},
