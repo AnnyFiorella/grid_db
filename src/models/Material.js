@@ -21,7 +21,7 @@ const Material = new Schema({
     startValidity: { type: String},
     endValidity: { type: String},
     cost_center: { type: String},
-    num_center: { type: Number},
+    num_center: { type: String},
     genre: { type: String},
     status: { type: Boolean},
     canned: { type: Boolean}
