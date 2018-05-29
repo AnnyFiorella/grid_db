@@ -13,7 +13,7 @@ const Material = new Schema({
     cod_program: { type: Number},
     duration: { type: String},
     material_type: { type: String},
-    classification: { type: String},
+    classification: { type: String , required: false},
     num_classification: { type: String},
     broadcastPrice: { type: Number},
     broadcastCredit: { type: Number},
